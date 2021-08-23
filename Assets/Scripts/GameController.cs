@@ -115,12 +115,15 @@ public class GameController : MonoBehaviour
         {
             mouseDown = true;
             resetIconOriginalScale = resetIcon.transform.localScale;
-            resetIcon.transform.localScale *= 1.1f;
+            //reset icon gets smaller when you press down, so it feels a bit more like a button
+            resetIcon.transform.localScale *= 0.9f;
         }
         else if(Input.GetMouseButtonUp(0) && mouseDown)
         {
             mouseDown = false;
+            //reset icon is set to its original scale after the mouse button is back up
             resetIcon.transform.localScale = resetIconOriginalScale;
+            //the level you lost on is destroyed and a new game is started, with a new level and player ball
             DestroyCurrentLevel();
             StartNewGame();  
         }
