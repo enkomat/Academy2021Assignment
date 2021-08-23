@@ -2,7 +2,7 @@
 
 #### Why I implemented the prototype this way
 * The amount of code is so small, that a structure with no events or other abstractions still works. Events should be implemented if the game grew to be more complex. I wanted to keep everything as lean as possible.
-* I wanted to be able to create new obstacles in the editor quickly, so you can basically grab any 2D shape and put a trigger collider on it, tag it as an obstacle and it will act as an obstacle after you plug it into the obstacle prefab list in the player controller. That makes iterating on the game easier.
+* I wanted to be able to create new obstacles in the editor quickly, so you can basically grab any 2D shape and put a trigger collider on it, tag it as an obstacle and it will act as an obstacle after you plug it into the obstacle prefab list in the game controller. That makes iterating on the game easier.
     * A dynamic system which automatically assigns the colors for the obstacles from the GameController when they are spawned should be implemented.
 * The player classes OnTriggerEnter2D is at the center of the interactions that happen while playing the game, as the game is dependent on the player hitting something for the game to be lost or progressed in. All important calls to the GameController from the PlayerController are made from OnTriggerEnter2D.
 
